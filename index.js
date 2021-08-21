@@ -1,14 +1,18 @@
 const express = require("express");
-const taskRouter = require("./routes/taskRouter.js");
-const auth = require("./routes/registerRouter.js");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+// const taskRouter = require("./routes/taskRouter.js");
+// const auth = require("./routes/registerRouter.js");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.NODE_ENV || 3434;
 const registerRouter = require("./routes/registerRouter");
+const loginRouter = require("./routes/loginRouter");
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use("/tasks", taskRouter);
+//app.use("/tasks", taskRouter);
+app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 //
 
