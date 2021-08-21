@@ -10,7 +10,11 @@ const registerRouter = require("./routes/registerRouter");
 const loginRouter = require("./routes/loginRouter");
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://www.localhost:3000",
+  })
+);
 //app.use("/tasks", taskRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
