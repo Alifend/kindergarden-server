@@ -20,17 +20,8 @@ app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 //
 
-app.post("/users", async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const user = { name: req.body.name, password: hashedPassword };
-    register.post();
-
-    users.push(user);
-    res.status(201).send();
-  } catch {
-    res.status(500).send();
-  }
+app.get("/", (req, res) => {
+  res.status(500).send("Conectado");
 });
 
 app.listen(PORT, () => {
