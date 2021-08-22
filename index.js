@@ -27,7 +27,7 @@ app.use("/register", registerRouter);
 //
 
 app.get("/", (req, res) => {
-  res.status(500).send("Conectado");
+  res.status(202).send("Conectado");
 });
 
 app.listen(PORT, () => {
