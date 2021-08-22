@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 // const auth = require("./routes/registerRouter.js");
 const cors = require("cors");
 const app = express();
-const PORT = process.env.NODE_ENV || 3434;
+const PORT = process.env.PORT || 3434;
 const registerRouter = require("./routes/registerRouter");
 const loginRouter = require("./routes/loginRouter");
 // Middlewares
